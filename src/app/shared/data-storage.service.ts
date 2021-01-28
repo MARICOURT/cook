@@ -1,5 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { Recipe } from "../recipes/recipe.model";
 import { RecipeService } from "../recipes/recipe.service";
 
 @Injectable({
@@ -18,9 +19,8 @@ export class DataStorageService {
     }
 
     fetchRecipes(){
-        this.http.get('https://cook-95b74-default-rtdb.europe-west1.firebasedatabase.app/recipes.json').subscribe(recipes =>{
-            console.log(recipes);
-            
+        this.http.get<Recipe[]>('https://cook-95b74-default-rtdb.europe-west1.firebasedatabase.app/recipes.json').subscribe(recipes =>{
+            this.recipeService.setRecipes(recipes);
         })
     }
 }
