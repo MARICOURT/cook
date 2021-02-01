@@ -11,7 +11,7 @@ import { ShoppingListComponent } from "./shopping-list/shopping-list.component";
 const appRoutes: Routes = [
     /** pathMatch: The path-match strategy 'full' matches against the entire URL.
      * It is important to do this when redirecting empty-path routes. */
-    { path: '', redirectTo: '/recipes', pathMatch: 'full' },
+    { path: '', redirectTo: '/auth', pathMatch: 'full' },
     { path: 'recipes', component: RecipesComponent, children: [
         { path: '', component: RecipeStartComponent },
         { path: 'new', component: RecipeEditComponent },
