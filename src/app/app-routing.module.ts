@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { AuthComponent } from "./auth/auth.component";
+import { AuthGuard } from "./auth/auth.guard";
 import { RecipeDetailComponent } from "./recipes/recipe-detail/recipe-detail.component";
 import { RecipeEditComponent } from "./recipes/recipe-edit/recipe-edit.component";
 import { RecipeStartComponent } from "./recipes/recipe-start/recipe-start.component";
@@ -12,7 +13,7 @@ const appRoutes: Routes = [
     /** pathMatch: The path-match strategy 'full' matches against the entire URL.
      * It is important to do this when redirecting empty-path routes. */
     { path: '', redirectTo: '/auth', pathMatch: 'full' },
-    { path: 'recipes', component: RecipesComponent, children: [
+    { path: 'recipes', component: RecipesComponent, canActivate:[AuthGuard], children: [
         { path: '', component: RecipeStartComponent },
         { path: 'new', component: RecipeEditComponent },
         { path: ':id', component: RecipeDetailComponent, resolve: [RecipesResolverService]},
