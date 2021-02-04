@@ -13,8 +13,6 @@ import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinne
 import { AuthInterceptorService } from './auth/auth-interceptor.service';
 import { AlertComponent } from './shared/alert/alert.component';
 import { PlaceholderDirective } from './shared/placeholder/placeholder.directive';
-import { ShoppingListModule } from './shopping-list/shopping-list.module';
-import { AuthModule } from './auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -29,9 +27,7 @@ import { AuthModule } from './auth/auth.module';
     BrowserModule,
     ReactiveFormsModule,
     HttpClientModule,
-    AppRoutingModule,
-    ShoppingListModule,
-    AuthModule
+    AppRoutingModule
   ],
   providers: [
     ShoppingListService, 
