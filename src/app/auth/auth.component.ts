@@ -28,7 +28,6 @@ export class AuthComponent implements OnDestroy{
     onSubmit(form: NgForm) {
         
         if(!form.valid) {
-            console.log("problem");
             return;
         }
         const email = form.value.email;
@@ -45,7 +44,6 @@ export class AuthComponent implements OnDestroy{
 
         authObs.subscribe(
             resData => {
-                console.log(resData);
                 this.isLoading = false;
                 this.router.navigate(['/recipes']);
             },
