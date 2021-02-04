@@ -1,5 +1,5 @@
 import { NgModule } from "@angular/core";
-import { RouterModule, Routes } from "@angular/router";
+import { PreloadAllModules, RouterModule, Routes } from "@angular/router";
 
 const appRoutes: Routes = [
     /** pathMatch: The path-match strategy 'full' matches against the entire URL.
@@ -14,7 +14,7 @@ const appRoutes: Routes = [
  * the app.module.ts
 */
 @NgModule({
-    imports: [RouterModule.forRoot(appRoutes)],
+    imports: [RouterModule.forRoot(appRoutes, {preloadingStrategy: PreloadAllModules})],
     exports: [RouterModule]
 })
 
